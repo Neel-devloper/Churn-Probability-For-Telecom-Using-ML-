@@ -62,31 +62,6 @@ import pandas as pd
 dummy_df = pd.DataFrame(dummy_data)
 preprocessor.fit(dummy_df)
 
-# model = torch.load('churn_model_entire.pth', weights_only=False)
-
-# model.eval()
-# with torch.inference_mode():
-#     def predict_churn(gender: int, SeniorCitizen: int, Partner: int, Dependents: int, tenure: int, PhoneService: int,
-#                       MultipleLines: int, InternetService: int, OnlineSecurity: int, OnlineBackup: int,
-#                       DeviceProtection: int, TechSupport: int, StreamingTV: int, StreamingMovies: int,
-#                       Contract: int, PaperlessBilling: int, PaymentMethod: int, MonthlyCharges: float,
-#                       TotalCharges: float) -> str:
-#         # Preprocess input data
-#         input_data = torch.tensor([[
-#             gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService,
-#             MultipleLines, InternetService, OnlineSecurity, OnlineBackup,
-#             DeviceProtection, TechSupport, StreamingTV, StreamingMovies,
-#             Contract, PaperlessBilling, PaymentMethod, MonthlyCharges,
-#             TotalCharges
-#         ]], dtype=torch.float32)
-#         # Make prediction
-#         prediction = model(input_data)
-#         return 'Churn' if torch.round(prediction).item() == 1 else 'No Churn'
-    
-
-
-
-# predict_churn(1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 2, 29.85, 29.85)
 
 class Model(nn.Module):
     def __init__(self):
